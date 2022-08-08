@@ -6,7 +6,7 @@ import (
 	"github.com/Mo3g4u/go_todo_app/entity"
 )
 
-func (r *Repository) ListTask(
+func (r *Repository) ListTasks(
 	ctx context.Context, db Queryer,
 ) (entity.Tasks, error) {
 	tasks := entity.Tasks{}
@@ -26,8 +26,8 @@ func (r *Repository) AddTask(
 	t.Created = r.Clocker.Now()
 	t.Modified = r.Clocker.Now()
 	sql := `INSERT INTO task
-           (title, status, created, modified)
-           VALUES(?, ?, ?, ?)`
+		(title, status, created, modified)
+	VALUES (?, ?, ?, ?)`
 	result, err := db.ExecContext(
 		ctx, sql, t.Title, t.Status,
 		t.Created, t.Modified,
@@ -41,5 +41,4 @@ func (r *Repository) AddTask(
 	}
 	t.ID = entity.TaskID(id)
 	return nil
-
 }
