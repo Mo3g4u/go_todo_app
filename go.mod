@@ -13,6 +13,7 @@ require (
 require (
 	github.com/go-playground/locales v0.14.0 // indirect
 	github.com/go-playground/universal-translator v0.18.0 // indirect
+	github.com/jmoiron/sqlx v1.3.5 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	gopkg.in/go-playground/assert.v1 v1.2.1 // indirect
 )
