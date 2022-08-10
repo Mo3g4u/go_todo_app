@@ -11,7 +11,7 @@ func (r *Repository) ListTasks(
 ) (entity.Tasks, error) {
 	tasks := entity.Tasks{}
 	sql := `SELECT
-				id, title,
+				id, user_id, title,
                 status, created, modified
               FROM task
 			  WHERE user_id = ?;`
